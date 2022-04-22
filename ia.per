@@ -1,0 +1,617 @@
+;------------------------------------------------------------------------------------------------
+;|                                      Age sombre                                               |
+;------------------------------------------------------------------------------------------------
+(defrule
+(unit-type-count villager >= 0)
+=>
+(chat-local-to-self "I just made my first rule!!!!")
+
+)
+
+(defrule
+(current-age == dark-age)
+(can-build town-center)
+=>
+(build town-center)
+)
+(defrule
+
+(can-afford-building house)
+(housing-headroom < 4)
+(population-headroom > 3)
+=>
+(build house)
+)
+(defrule
+(current-age == dark-age)
+(unit-type-count villager < 20)
+(can-train villager)
+=>
+(train villager)
+)
+(defrule
+(building-type-count-total house > 0)
+(building-type-count-total mill == 0)
+(resource-found food)
+(can-build mill)
+=>
+(build mill)
+)
+(defrule
+(building-type-count-total mill > 0)
+(building-type-count-total lumber-camp == 0)
+(resource-found wood)
+(can-build lumber-camp)
+=>
+(build lumber-camp)
+)
+(defrule
+(current-age == dark-age)
+(building-type-count-total lumber-camp > 0)
+(unit-type-count villager > 15)
+(building-type-count farm < villager-farmer)
+(idle-farm-count < 2)
+=>
+(build farm)
+)
+(defrule
+(building-type-count-total lumber-camp > 0)
+(building-type-count-total barracks == 0)
+
+(can-build barracks)
+=>
+(build barracks)
+)
+
+
+(defrule
+(current-age == dark-age)
+(building-type-count-total mill > 0)
+(building-type-count-total lumber-camp > 0)
+(unit-type-count-total villager >= 20) 
+(can-research feudal-age)
+=>
+(research feudal-age)
+(chat-local-to-self "Feudal Age, here we come!")
+)
+
+
+(defrule
+(true)
+(current-age == dark-age)
+=>
+(set-strategic-number sn-number-explore-groups 1)
+(set-strategic-number sn-maximum-explore-group-size 1)
+(set-strategic-number sn-food-gatherer-percentage 60)
+(set-strategic-number sn-wood-gatherer-percentage 40)
+(set-strategic-number sn-percent-civilian-explorers 0)
+)
+
+;------------------------------------------------------------------------------------------------
+;|                                      Age féodale                                             |
+;------------------------------------------------------------------------------------------------
+
+(defrule
+(current-age == feudal-age)
+(unit-type-count villager < 35)
+(can-train villager)
+=>
+(train villager)
+)
+(defrule
+(current-age == feudal-age)
+(building-type-count-total blacksmith == 0)
+(can-build blacksmith)
+=>
+(build blacksmith)
+)
+(defrule
+(current-age == feudal-age)
+(can-research ri-forging)
+(can-build blacksmith)
+=>
+(research ri-forging)
+)
+
+(defrule
+(current-age == feudal-age)
+
+(can-research ri-scale-barding)
+(can-build blacksmith)
+=>
+(research ri-scale-barding)
+)
+
+(defrule
+(current-age == feudal-age)
+(building-type-count stable < 2 )
+(building-type-count blacksmith == 1)
+(can-build stable)
+=>
+(build stable)
+)
+
+(defrule
+
+(current-age == feudal-age)
+(building-type-count stable > 1)
+(unit-type-count scout-cavalry < 10)
+(can-train scout-cavalry)
+=>
+(train scout-cavalry)
+)
+
+(defrule
+(current-age == feudal-age)
+(can-research ri-double-bit-axe)
+=>
+(research ri-double-bit-axe)
+)
+
+(defrule
+(unit-type-count villager > 30)
+(can-research ri-wheel-barrow)
+=>
+(research ri-wheel-barrow)
+)
+
+(defrule
+(current-age == feudal-age)
+(resource-found gold)
+(building-type-count mining-camp < 2)
+(can-build mining-camp)
+=>
+(build mining-camp)
+)
+(defrule
+(current-age == feudal-age)
+(building-type-count mining-camp >= 1)
+(research-completed ri-wheel-barrow)
+=>
+(research ri-gold-mining)
+)
+
+(defrule
+(current-age == feudal-age)
+(building-type-count market == 0)
+(can-build market)
+=>
+(build market)
+)
+
+
+
+(defrule
+(current-age == feudal-age)
+
+(unit-type-count villager > 15)
+(building-type-count farm < villager-farmer)
+(idle-farm-count < 2)
+=>
+(build farm)
+)
+(defrule
+
+
+(current-age == feudal-age)
+(can-research castle-age)
+(unit-type-count villager >= 35 )
+=>
+(research castle-age)
+)
+(defrule
+(true)
+(current-age == feudal-age)
+(building-type-count mining-camp >= 1)
+=>
+(set-strategic-number sn-number-explore-groups 1)
+(set-strategic-number sn-maximum-explore-group-size 1)
+(set-strategic-number sn-food-gatherer-percentage 50)
+(set-strategic-number sn-wood-gatherer-percentage 40)
+(set-strategic-number sn-gold-gatherer-percentage 10)
+
+)
+
+(defrule
+(true)
+(current-age == feudal-age)
+=>
+(set-strategic-number sn-number-explore-groups 1)
+(set-strategic-number sn-maximum-explore-group-size 1)
+(set-strategic-number sn-food-gatherer-percentage 50)
+(set-strategic-number sn-wood-gatherer-percentage 50)
+)
+
+
+;------------------------------------------------------------------------------------------------
+;|                                      Castle Age                                              |
+;------------------------------------------------------------------------------------------------
+
+
+(defrule
+(current-age == castle-age)
+(unit-type-count villager < 70)
+(can-train villager)
+=>
+(train villager)
+)
+
+(defrule
+(current-age == castle-age)
+(building-type-count town-center < 3)
+(can-build town-center)
+=>
+(build town-center)
+)
+
+(defrule
+(current-age == castle-age)
+
+(building-type-count farm < villager-farmer)
+(idle-farm-count < 2)
+=>
+(build farm)
+)
+(defrule
+(current-age == castle-age)
+(can-research ri-bow-saw)
+=>
+(research ri-bow-saw)
+)
+(defrule
+(current-age == castle-age)
+(building-type-count lumber-camp < 3)
+(can-build lumber-camp)
+=>
+(build lumber-camp)
+)
+(defrule
+(current-age == castle-age)
+(building-type-count mining-camp < 5)
+(can-build mining-camp)
+=>
+(build mining-camp)
+)
+(defrule
+(current-age == castle-age)
+(building-type-count stable < 6)
+(can-build stable)
+=>
+(build stable)
+)
+
+(defrule
+(current-age == castle-age)
+(can-research ri-husbandry)
+=>
+(research ri-husbandry)
+)
+
+(defrule
+(current-age == castle-age)
+(unit-type-count knight < 20)
+(can-train knight)
+=>
+(train knight)
+)
+
+(defrule
+(true)
+(current-age == castle-age)
+
+=>
+(set-strategic-number sn-number-explore-groups 1)
+(set-strategic-number sn-maximum-explore-group-size 1)
+(set-strategic-number sn-food-gatherer-percentage 40)
+(set-strategic-number sn-wood-gatherer-percentage 30)
+(set-strategic-number sn-gold-gatherer-percentage 20)
+(set-strategic-number sn-stone-gatherer-percentage 10)
+)
+(defrule
+(current-age == castle-age)
+(can-research ri-hand-cart)
+=>
+(research ri-hand-cart)
+)
+(defrule
+(current-age == castle-age)
+(can-research ri-iron-casting)
+=>
+(research ri-iron-casting)
+)
+(defrule
+(current-age == castle-age)
+(can-research ri-chain-barding)
+=>
+(research ri-chain-barding)
+)
+
+(defrule
+(current-age == castle-age)
+(can-build castle)
+=>
+(build castle)
+)
+(defrule
+(current-age == castle-age)
+(can-research ri-gold-shaft-mining)
+=>
+(research ri-gold-shaft-mining)
+)
+(defrule
+(current-age == castle-age)
+(can-research ri-stone-mining)
+=>
+(research ri-stone-mining)
+)
+
+(defrule
+(current-age == castle-age)
+(building-type-count town-center == 3 )
+(unit-type-count knight < 35)
+(can-train knight)
+=>
+(train knight)
+)
+
+(defrule
+(current-age == castle-age)
+(building-type-count town-center == 3 )
+(can-research imperial-age)
+
+=>
+(research imperial-age)
+)
+;------------------------------------------------------------------------------------------------
+;|                                      imperial age                                            |
+;------------------------------------------------------------------------------------------------
+(defrule
+
+(current-age == imperial-age)
+(can-research cavalier)
+=>
+(research cavalier)
+)
+
+(defrule
+(research-completed cavalier)
+(unit-type-count cavalier < 35)
+(can-train cavalier)
+=>
+(train cavalier)
+)
+(defrule
+(research-completed paladin)
+(unit-type-count paladin < 35)
+(can-train paladin)
+=>
+(train cavalier)
+)
+
+
+(defrule
+(current-age == castle-age)
+(unit-type-count villager < 130)
+(can-train villager)
+=>
+(train villager)
+)
+(defrule
+(current-age == castle-age)
+(building-type-count lumber-camp < 6)
+(can-build lumber-camp)
+=>
+(build lumber-camp)
+)
+(defrule
+(current-age == castle-age)
+(building-type-count mining-camp < 6)
+(can-build mining-camp)
+=>
+(build mining-camp)
+)
+(defrule
+(true)
+(current-age == imperial-age)
+=>
+(set-strategic-number sn-food-gatherer-percentage 40)
+(set-strategic-number sn-wood-gatherer-percentage 30)
+(set-strategic-number sn-gold-gatherer-percentage 20)
+(set-strategic-number sn-stone-gatherer-percentage 10)
+)
+
+(defrule
+(current-age == imperial-age)
+(can-research ri-chivalry)
+=>
+(research ri-chivalry)
+)
+(defrule
+(current-age == imperial-age)
+(can-research ri-conscription)
+=>
+(research ri-conscription)
+)
+(defrule
+(current-age == imperial-age)
+(can-research ri-hoardings)
+=>
+(research ri-hoardings)
+)
+(defrule
+(current-age == imperial-age)
+(can-research ri-blast-furnace)
+=>
+(research ri-blast-furnace)
+)
+(defrule
+(current-age == imperial-age)
+(can-research ri-plate-barding)
+=>
+(research ri-plate-barding)
+)
+
+(defrule
+(current-age == imperial-age)
+(can-research paladin)
+=>
+(research paladin)
+)
+
+
+
+
+
+
+
+
+
+; The objective of this AI is to provide a complete but very easy to understand guide to allow to people to become competent scripters.
+; This version of the Xafaxarcos Tutorial is only the first lesson, I'll update it adding new versions of this AI with more stuff and info that I haven't added yet to don't overcomplicate my first lesson.
+
+; There are other interesting guides.
+; The first two examples are incomplete guides, but useful for people with zero scripting knowledges. They are very very clear:
+; - The World of AI Scripting, by Leif Ericson.
+; http://aok.heavengames.com/cgi-bin/aokcgi/display.cgi?action=ct&f=26,29,,30
+; AI tutorial guide, by RubberMan. Well, it had a second and more parts in the past, but they have disappeared. So this once complete guide has become only an introduction.
+; If you find the rest of the guide, please comunicate it in the forum of aiscripters. The scripting comunity will thank you it.
+; http://aok.heavengames.com/cgi-bin/aokcgi/display.cgi?action=ct&f=26,28,,30
+
+; Complete guides are (you can find them in aiscripters and Age of Kings Heaven:
+
+; - Training AI, by Bear The Great. If you are going to read only one of the tutorials that I'm recommending, just read it.
+; It's the most complete, with great stuff. Once readed and understood you'll have a nice basis and be prepared to make an ok script by your own.
+
+; - Tutorial AI, by Berries66. Much more simple and less complete, but easier to understand.
+
+; - Vicky The Viking, by IS_NormanDuck. Much more simple and less complete, but easier to understand.
+
+; Once you have readed enough and are ready to start, there are a few AIs designed to play, not as tutorial, but with enough coments and a clear code,
+; which can be useful to get more knowledges. Like:
+;- VNS_Halen., by VNS_None Able to play RM with Vikings and Huns, and DM with Goths and Huns. Huns are the worst civ for this AI in both game types, but still very powerful. A very agressive flusher.
+; - The Horde, by Archon/Zergs. Perhaps the best AI ever. Any civ, map and most usual settings.
+; IS_Machine, by IS_NormanDuck. One of the reasons because I said that The Horde was "perhaps" the best AI. Also, many civ, any map (even the weirdest for an AI) and many settings.
+; Crusade, by Campeador. It's my main civ, able to play any setting that you can imagine, and also very strong. It's got a similar level to the best in a few settings and it's quite nice in the rest.
+;- Chameleon, by Scripter64. Any setting, I think. The AI with a highest diversity of strategies, it loads a different one in every game, depending of the mpa, civ, etc.
+; It includes a program to allow to creat your  own strategies for it. Scripter64 add any strategy that people send him in the next version.
+; It also has got nice stuff to learn codes about better attacking systems or to build near from your town center creating a comact base. We'll see ways to do it in the last versions of this tutorial.
+
+; Other documentation that you need is the CPSB file, included in the Aok CD. It's like an apendix, too long to read, but useful to consult.
+; Anyway, a small part of the CPSB file is wrong, you can see the corrections in the Resources Forum of aiscripters.
+
+
+; Other interesting AIs to test against or to study, perhaps not reading their code ( afew of them have a messy code, the orders I haven't readed them), but at least playing from their point of view, are:
+; - Lade, by Marathon. In only plays land maps, or mixed maps but without a navy. But it's a very strong and hard to core. A great late game and the best team cooperation together with The Horde, IS_Machine and perhaps AllianceThundaEmpire.
+; Able to play RM, DM and Kingcide.
+; - Barbarian, by _II2N_. Any civ, map and most settings. Other very strong and versatile AI.
+; - Arabian Knights by _II2N_. A Saracen krusher which only farms in the dark age annd late game, because it mines a lot of gold and stone to sell it for food and wood, allowing a radical and ultraviolent krush.
+; If you are able to survive to survive thsoe knights for a while you'll win because it's late game is too weak because the radical strategy, the problem is to survive it. Included in Barbarian.
+; - CPS_Alexander, by Suriel. It plays RM. Very strong and with a lot of different strategies.
+; - ARFII De'Gel, by ARFII. Only land maps, but perhaps the strongest AI with Aztecs. Also very good with other civs, but then The Horde and a very few others are better.
+; - ARFII Eyries, by ARFII. The same than De'Gel, but with only 50 rules. The strongest AI with a so limited number of rules, and still a top AI even compared with AIs without a limit of rules. She's got chances even against her older sister.
+; - AllianceThundaEmpire, by Mabuse. A bit obsolete but still very strong. It's a superclassic which was the greatest AI a few years ago. It can play every setting higher than 25 pop.
+; - Eagles Revenge, by Elite Raider (ER). The most powerful eagle rush seen in an AI. A top AI and a really nightmare with Aztecs.
+; - StrongBow, by Kurn. It plays Mayans, also Britons. Archers, many archers. And a few monks and ramd when needed.
+; - Phyrexx, by Robink. Hunnin archer flush followed by cav archers. It's similar to StrongBow but smarter and with counters.
+; - No Limits, by TOAO_Dave. A very strong and violent Hunnic flusher. A reference for scout/archers flushes.
+; - SRN, by JdStankovsky. Very good Aztec Mush and Celt Serush. It plays more civs.
+; - Tlamacazqui, by JdStankovsky. It's the same than SRN but with only Aztecs and an improved Mush.
+; - Goths, by Lather. Superstrong Goth m@ flusher, with a good amount of towers. It's problem is that a bug sometimes avoid its scout do his job, ruining the game in such cases.
+; - Kamikaze, by The Rules. A strong trusher.
+; - Goose, by TEA315. Other strong flusher.
+; -VNS_Chris, by VNS_None. A strong Gothic flood champion able to defend itself with an army if the enemy tries to attack first. Very strong. Ableo to change to huskies if enemy masses archers.
+; - Wartron, by cakemaphoneige. Similar to VNS_Chris.
+; - Brititron, by cakemaphoneige. It plays Britons, Chines and Mayans. Similar to Wartron, bit it tries to mass unique units archers.
+
+
+; Other interesting AIs: Snake, Ace, Kosmos, AgeOfStoneWall, Rattlehead, Megaflush, WigWam, Leif Erikson, Promi, Offwo, Mire, ChiefOfDS, IMP_CAES_MIRO_II, John Mendl, Solidus, Boss and many more.
+
+
+
+; Let's start the lessons!
+
+; You perhaps find strange why all these lines start with a semi-colon. Well, if you have programmed C or other programming languages, then you know that the semi-colon is telling
+; to the programm that words which follow it are only a comment, so they will be ignored.
+; But if they are ignored, why do we put them? Only to understand it, not only other people, also to make us able to understand it once our AI becomes bigger or we stop to script for a good while.
+; For example, what makes this AI a good, I expect, tutorial is that the comments make this code very easy to understand.
+
+; Ok, we know how to comment lines and provide info, but how can we program an AI?
+; Answer, with rules. Rules are instructions to execute a few desired actions if a the specified conditions are true.
+
+; For example. We want to train villagers until we get 100 of them.:
+
+;(defrule 
+;(unit-type-count villager < 100)
+;(can-train villager) 
+; => 
+;(train villager) 
+;)
+
+; "Defrule" is a key word, which means the start of a rule, it defines the rule. You also can see that there is a parenthesis covering all the rule.
+; (unit-type-count villager < 100) is a condition, which is true when we've got less than 100 villagers
+; (can-train) is other condition, which becomes true when we've got enoguh resources to train a villager and there is a free town center for it. Other units can require to be in a x age, research previosuly a tech, etc.
+; => separates the conditions from the actions
+; (train villager) is an action which, ehem, trains a villager
+; Also notice that there is a parenthesis for every fact (condition or action). Remember that there is a limit of 16 facts for any rule (for example 9 conditions and 7 actions)
+
+; You'll sometimes see logical operators like "or", "and", "xor", etc, which can be stacked. Anyone of them can join two conditions
+; "or" operator means that it's a condition which is true if, and only if, one (or both) of the conditions which is joining is true
+; "and" operator means that it's a condition which is true if, and only if, both conditions are true (one is not enough in this case)
+; "not" operators means that it's true if the condition included is false, and viceversa
+; "xor"  operator means that it's a condition which is true if, and only if, one and only one conditions is true (if none or both are true it brings a false result)
+; "nor" operator means that it's a condition which is true if none of the two conditions which is joining is true. It's like a "not" including an "or"
+; "nand" operator means that it's a condition which is true if at least one of the two conditions which is joining is false. It's like a "not" including an "and"
+; "xnor" operator means that it's a condition which is true if none or both of thetwo conditions which is joining are true. It's like a "not" including an "xnor"
+
+; An easy example. We want to jump to feudal age if we'got at least 30 villagers. But we also want to allow it if we'got a lot of food, more than 1000 units, to make our AI able to feudal fast in Death Match games.
+;(defrule 
+;(or	(unit-type-count villager >= 30)
+;	(food-amount > 1000)
+;)
+;(can-research feudal-age) 
+; => 
+;(research feudal-age) 
+;)
+; The condition (can-research feudal age) must to be true to research it. But it isn't enough to research it, we also need to have at least 30 villagers OR +1000 food.
+; With 30 villagers and 500 food the or condition becomes true, with 3 villagers and 1001 food also.
+
+; Apart from rules, there are more tools that you're needing to scripting, but let them for later.
+
+
+
+; The next is to give to our AI an structure to work better and to understand it better. In every section we'll find different code for different things, everything grouped in a correct place.
+
+; 1- Constants
+; 2- Initialization of goals, sns, etc
+; 3- Economy
+; 4- Gatherer distribution
+; 5- Buildings
+; 6- Upgrades
+; 7- Units
+; 8- Market
+; 9- Military superiority
+; 10- Attack
+; 11- Resign
+
+; I want to make you notice that this structure could be different, and it is for any different AI. Common things are:
+; - Constants should be defined the sooner the better. The reason is that an AI is a collection of rules which are readed from the top to the botton.
+; Later the process (called scan cicle, concept which is also used in the programming of programmable industrial automatisms) is repeated again and again,
+; reading the same rules in the same orden in every scan cicle.
+; It means that if you use a constant before to define it, in the first scan cicle the computer won't understand it, giving us an error and crashing.
+; - Many goals (tools essential for any script, see them later) and strategic numbers (parameters which modify the behavior of the AI) can give us errors in specific circumstances 
+; if we don't put them an initial value before to use them. Not always, it only depends of the circumstances.
+; - Economy controls eco buildings and upgrades, and often comes later, to make more priority eco upgrades and buildings than military ones, although in ultragressive AI we could make an exception, but if you do it
+; you have to be sure about what you are doing.
+; - Gatherer percentages can be used to make decisions later, so they often are placed soon. We also could put them before economy rules. Well, they really could be wrttien in every place, it depends.
+; - Buildings are often placed before upgrades and units because they are often more expensive and because a minimal number of them can be critical for the strategy. We also can use their number to take decisions.
+; Upgrades. It's important to take them before unit training rules. Imagine that you gice more priority to militia training than to the man at arms upgrade. You couln't research m@a until you get top population or housed.
+; Of course you also cna separate important upgrades from upgrades to take only if you are plenty of resources, so the second ones could be placed later to units.
+; - Market rules are to sell and buy resources. You can use their excess for extra buildings, units or techs, so they are often in the end of the script. We could write them even later than in this example.
+; - Military superiority is often placed near the end, but it's advisable to do it before to decide if attack or not. It's function is to know which player have got more military units.
+; - Attack rules decide if attack or not, to stop attack, etc. We can also include here rules to change the behavior of our troops depending about if they are attacking or defending, preferred targets, etc.
+; - Resign. Of course it's never a priority, so I put it in the end. Although we could put it even near to the begining if those rules doesn't affect any more. It doesn't makes our AI stronger, but funnier to play against
+; if the lose is sure it's a good thing to avoid our rival to lose the time. remember to don't resing in team games, our last buildings can be useful to give time to our allies while our enemies are finishing their destruction.
+
+; And of course we could make different sections instead of these, the next versions of this tutorial will have different ones. But let's stop to speaking and start to scripting.
+
+;(load "Xafaxarcos\Constants")

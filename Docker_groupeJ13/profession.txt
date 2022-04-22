@@ -1,0 +1,105 @@
+Agents d'entretien de locaux
+Ingénieurs et cadres d'étude, R&D en informatique, chefs de projets informatiques
+Conducteurs routiers
+Aides-soignants
+Aides et apprentis de cuisine
+Serveurs de cafés restaurants
+employés polyvalents de la restauration
+Attachés commerciaux
+Ouvriers non qualifiés de l'emballage et manutentionnaires
+Cuisiniers	
+Employés de maison et personnels de ménage
+Agents de sécurité et de surveillance
+Conducteurs et livreurs sur courte distance
+Infirmiers
+Technique et agents de maîtrise de la maintenance et de l'environnement
+Employés de libre service
+Ouvriers non qualifiés du second œuvre du bâtiment
+Maçons
+Ouvriers non qualifiés du gros œuvre du bâtiment
+Secrétaires bureautiques et assimilés
+esthéticiens
+coiffeur
+mécaniciens
+Plombiers
+chauffagiste
+ouvriers
+menuisiers
+conducteurs de bus
+Employés de l'hôtellerie
+Educateurs spécialisés
+Agent administratif
+agriculteur 
+Electriciens
+Vendeurs en produits alimentaires
+Couvreurs
+Formateurs
+Agents de services hospitaliers
+Représentants auprès des particuluers
+Boulangers
+Patissiers
+Cuisinier
+Professeur
+Directeur
+Mathématicien
+Informaticien
+Médecins
+Soudeurs
+Chirurgien
+Neurologue
+Sportif
+Carrosiers automobiles
+Surveillants d'établissement scolaires
+Chefs cuisiniers
+Cinéaste
+Bouchers
+Eleveurs salariés
+Banquiers
+Comptable
+Graphiste
+Vendeurs généralistes
+Curés
+Maire
+Voiturier
+Restaurateur
+Serveur
+Mangaka
+Dessinateur
+Joueur professionnel
+Streameur
+Data scientist
+statisticien
+Analyste cyber-sécurité
+Médecin ORL
+Echographiste
+Dentiste
+Actuaire
+Météorologue
+Présentateur TV
+Physicien
+Economiste
+Développeur web
+Interprète
+Rédacteur technique
+Analyste financier
+Juriste
+Avocat
+Libraire
+Ecrivain
+Philosophie
+Podologue
+Biologiste
+Vétérianire
+Psychologue
+Conseiller d'orientation
+Historien
+Coiffeur
+Assisant exécutif
+Zoologiste
+Bijoutier
+Conservateur de musée
+Assureur
+Dermatologue
+Grossiste
+Recruteur
+Community Manager

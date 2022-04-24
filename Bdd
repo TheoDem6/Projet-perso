@@ -1,0 +1,57 @@
+create table ARTICLE (
+   NUMARTICLE           SERIAL               not null,
+   NUMCATEGORIE         INTEGER               not null,
+   CODETYPE             CHAR(1)              not null,
+   NOMARTICLE           VARCHAR(50)          null,
+   REFERENCEINTERNE     CHAR(10)             null,
+   CODEBARRE            CHAR(13)             null,
+   COUTACHAT            NUMERIC(10,2)        null,
+   constraint PK_ARTICLE primary key (NUMARTICLE)
+);
+
+create table TARIFVENTE (
+   NUMARTICLE           INTEGER                 not null,
+   CODELISTE            CHAR(1)              not null,
+   PRIXVENTE            DECIMAL(10,2)        null,
+   constraint PK_TARIFVENTE primary key (NUMARTICLE, CODELISTE)
+);
+
+create table LISTEPRIX (
+   CODELISTE            CHAR(1)              not null,
+   LIBELLELISTE         VARCHAR(20)          null,
+   constraint PK_LISTEPRIX primary key (CODELISTE)
+);
+
+create table CATEGORIE (
+   NUMCATEGORIE         SERIAL               not null,
+   LIBELLECATEGORIE     VARCHAR(40)          null,
+   constraint PK_CATEGORIE primary key (NUMCATEGORIE)
+);
+
+create table SEDECOMPOSE (
+    NUMCATEGORIE1 SERIAL not null,
+    NUMCATEGORIE2 SERIAL not null,
+    constraint PK_CATEGORIE primary key (NUMCATEGORIE1, NUMCATEGORIE2)
+)
+
+
+
+
+alter table ARTICLE
+   add constraint FK_ARTICLE_ESTLIE_TYPEARTI foreign key (CODETYPE)
+      references TYPEARTICLE (CODETYPE);
+
+alter table ARTICLE
+   add constraint FK_ARTICLE_FAITPARTI_CATEGORI foreign key (NUMCATEGORIE)
+      references CATEGORIE (NUMCATEGORIE);
+
+alter table TARIFVENTE
+   add constraint FK_TARIFVEN_TARIFVENT_ARTICLE foreign key (NUMARTICLE)
+      references ARTICLE (NUMARTICLE);
+
+alter table TARIFVENTE
+   add constraint FK_TARIFVEN_TARIFVENT_LISTEPRI foreign key (CODELISTE)
+      references LISTEPRIX (CODELISTE);
+
+alter table SEDECOMPOSE 
+    add constraint FK_foreign key  

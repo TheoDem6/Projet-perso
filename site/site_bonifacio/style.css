@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'amaticbold';
+    src: url('fonts/amatic-bold-webfont.woff2') format('woff2'),
+         url('fonts/amatic-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body{
+    background-color:#cef;
+    
+
+}
+
+main{
+    background-color: #9cf;
+    margin: auto;
+    height: 78em;
+    width: 50em;
+    border:1px ;
+    border-style: solid;
+    padding: 1em 0 1em 1em;
+}
+header{
+    background-color: #69F;
+    width: 92%;
+    height: 30%;
+    padding: 1em 2em 1em 1em;
+    
+    
+}
+header>h1{
+    font-variant: small-caps;
+}
+figure{     
+    text-align: center;
+}
+header>figure{ /* 3 images du dessus*/
+    width: 30%;
+    margin:10px;
+    display: inline-block;
+}
+
+main>footer{
+    background-color: #69f;
+    width: 92%;
+    height: 20em;
+    padding: 1em 2em 1em 1em;
+}
+main>aside{      /* plan de bonifacio*/
+    height: 2em;
+    width: 92%;
+    border:  1px; 
+    background-color:white;
+    text-align: center;
+    position: sticky;
+    top:0%;
+    padding: 1em 2em 1em 1em;
+    
+    
+
+}
+section>aside{      /* image plan du dessus*/
+    float: right;
+    margin: 0 1em 1em 1em;
+    
+}
+nav{            /* Nav à gauche Bonifacio*/
+    position:fixed;
+    text-align: justify;
+    left: 0;
+    top: 10%;
+    height: 15em;
+    width: 10em;
+    background-color: #69f;
+    border: 1px;
+    border-style: solid;
+    list-style-image:url(images/maure.png);
+    
+}
+nav>h2{
+    padding-left: 1em;
+}
+nav a:hover
+{   
+    background-color: blue;
+    color: white;
+
+
+}
+footer {
+    height: 20em;
+    width: 92%;
+    padding:1em 2em 1em 1em;
+    background-color:  #69f;
+}
+header,footer,nav{
+    background-color:#69F;
+}
+#pont{  
+    position: relative;
+    z-index: 1;
+    top: 7em;
+    left: 21em;
+}
+#rocher{
+    position:relative;
+    z-index: 2;
+    right: 7em;
+    top:3em;
+}
+body>aside{ /* facebook/twitter*/
+    position: absolute;
+    right: 0em;
+    top:15em;
+    height:6em;
+    width:4em;
+    background-color: #69F;
+    border: 1px;
+    padding: 1em;
+    border-style: solid;
+    text-align: center;
+
+}

@@ -1,0 +1,120 @@
+body{
+    padding:0.8em;
+    margin: 0;
+    font-family: arial,sans-serfif,Arimo;
+    font-size: 1em;
+    color:#f6f8ca;
+    background-color:#f6f8ca;
+    min-width: 980px;
+    
+
+}
+header,article,footer,nav{
+    background-color: #1f8A70;
+    border-radius: 0 10px;
+    margin: 0.5em;
+    padding: 0.8em;
+    
+
+    
+
+}
+
+
+
+
+header{
+    align-items: center;
+}
+header nav{
+    align-items: center;
+}
+header div{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+header img{
+    height: 150px;
+    width: 150px;
+    box-shadow: none;
+    margin-right: 0.8em;
+}
+header h1{
+    font-family: Arial,sans-serif;
+    width: 80%;
+    height: 264;
+    color: #1f8A70;
+    font-variant: small-caps;
+    font-size: 4em;
+    text-align: center;
+    background-image: url(images/ile-de-batz.jpg);
+}
+article h2 {
+    font-family: arial,sans-serif,Roboto;
+    font-weight: bolder;
+}
+article em,article strong{
+    background-color: #f6f8ca;
+    color: #1f8A70;
+}
+section{
+    display: flex;
+}
+
+section article figure{
+    margin: 0;
+    float: right;
+    margin: 1em 0.5em;
+
+}
+section +article div{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+article ul {
+    flex-shrink: 0;
+    flex-grow: 0;
+    list-style-position: url(images/puce-fleur.png);
+}
+article ul ul{
+    list-style : square none;
+}
+img {
+    box-shadow: 5px -5px 3px 0px;
+}
+
+section>article,section>article>article {
+    display: flex;
+    padding: 1em;
+    border: solid;
+    
+}
+
+
+
+footer{
+    font-size: 0.8em;
+    text-align: center;
+    
+
+}
+footer a {
+    text-decoration: none;
+    color :#f6f8ca
+}
+
+body >nav {
+    position:fixed;
+    top: 3em;
+    right: -1em;
+    border: 1px solid #1f8A70;
+    background-color: #f6f8ca;
+    border-radius: 10 0 0 10;
+}
+body > nav img{
+    display: block;
+    width: 3em;
+}

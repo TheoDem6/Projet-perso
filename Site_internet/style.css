@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita&family=Yellowtail&display=swap');
+
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #231301;
+    padding: 2em;
+}
+
+main{
+    flex-basis: 100%;
+    background-color: #FFF8D4;
+    font-family: 'Sansita', sans-serif;
+    padding: 2em;
+    margin: 1em;
+}
+
+header{
+    display: flex;
+    flex-basis: 120%;
+    flex-direction: row;
+    background-color: #231301;
+    font-family: 'Yellowtail', cursive;
+    color: #FDF1B8;
+    padding: 2em;
+    width: auto;
+
+}
+
+h2{
+    background-color: #231301;
+    color: #FDF1B8;
+    padding : 1em;
+    border-left: 4mm solid #E12B4C;
+    border-right: 4mm solid #E12B4C;
+    flex-basis: 1em;
+}
+
+header h1{
+    display: flex;
+    padding-left:5em;
+    padding-right: 5em;
+}
+
+header nav{
+    display: flex;
+    padding-top: 1em;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-basis: 60%;
+    background-color: #231301;
+    color: #FDF1B8
+}
+
+header button, header ul, header li, header div, header span, header a, header ul li{
+    background-color: #231301;
+    color: #FDF1B8
+}
+
+p{
+    background-color: #E12B4C;
+    color : #231301;
+    padding: 1em;
+    border-left: 4mm solid #231301;
+}
+
+footer{
+    flex-basis: 100%;
+    background-color: #231301;
+    color: #FDF1B8;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+section iframe{
+    border: 4mm solid #231301;
+}
+
+section>iframe{
+    display: flex;
+    align-self: center;
+    padding-left: 40%;
+}
+
+a{
+    color: #FDF1B8;
+    text-decoration: none;
+}
+
+a:hover{
+    color:#E12B4C;
+}

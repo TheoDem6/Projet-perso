@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Page Type produit</title>
+</head>
+<body>
+
+    
+    <header>
+
+        <img src="images_glaces/logo Koh Frais modifie.png" width="20%" height="100%"/>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                <ul class="navbar-nav mr-auto">
+                    
+                        <a class="nav-link" href="accueil.html">Accueil<span class="sr-only"></span></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <li class="nav-item active">
+                        <a class="nav-link" href="presentation.html">Présentation</a>
+                    </li>
+                    
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Découvrez nos produits</a>
+                        <div class="dropdown-menu" >
+                            <div class="dropdown dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="dropdown-layouts" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Glaces</a>
+                                <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="glaces.html">Glaces</a>
+                                    <a class="dropdown-item" href="glaces_bio.html">Glaces bio</a>
+                                    <div class="dropdown dropend">
+                                </div>
+                            </div>
+                            </div>
+                            <a class="dropdown-item" href="buches.html">Bûches</a>
+                            <a class="dropdown-item" href="gateaux.html">Gâteaux</a>
+                            <a class="dropdown-item" href="fruits.html">Fruits</a>
+                            <a class="dropdown-item" href="coulis.html">Coulis</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="trouver.html">Où nous trouver</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        </div>
+        
+    </header>
+
+    <main>
+        <h2>Glace Chocolat</h2>
+        <img src="images_glaces/chocolat.jpg" alt="Glace au chocolat">
+        <article>Glace au chocolat</article>
+        <article>500mg, 1kg, 2kg</article>
+    </main>
+    <footer>
+        <h3>
+            Suivez nous
+        </h3>
+        <ul>
+            <li><a href="https://fr-fr.facebook.com/KOHFRAIS">Facebook</a></li>
+            <li><a href="https://www.instagram.com/KOHFRAIS_">Instagram</a> </li>
+        </ul>
+        <h3>
+            Nous contacter
+        </h3>
+        <ul>
+            <li>Téléphone : 07 85 68 48 78</li>
+            <li>Mail :<a href="mailto:KhoFraisContact@gmail.com"> KhoFraisContact@gmail.com </a> </li>
+            <li>Adresse : 4 Boulevard Louis Guillou Lannion</li>
+        </ul>
+        <h3>
+            Catégories
+        </h3>
+        <ul>
+            <li><a href="accueil.html">Accueil</a> </li>
+            <li><a href="presentation.html">Présentation</a> </li>
+            <li><a href="trouver.html"> Où nous trouver </a></li>
+        </ul>
+    </footer>
+
+    <script> // Pour faire fonctionner le dropdown
+        (function($bs) {
+          const CLASS_NAME = 'has-child-dropdown-show';
+          $bs.Dropdown.prototype.toggle = function(_orginal) {
+              return function() {
+                  document.querySelectorAll('.' + CLASS_NAME).forEach(function(e) {
+                      e.classList.remove(CLASS_NAME);
+                  });
+                  let dd = this._element.closest('.dropdown').parentNode.closest('.dropdown');
+                  for (; dd && dd !== document; dd = dd.parentNode.closest('.dropdown')) {
+                      dd.classList.add(CLASS_NAME);
+                  }
+                  return _orginal.call(this);
+              }
+          }($bs.Dropdown.prototype.toggle);
+      
+          document.querySelectorAll('.dropdown').forEach(function(dd) {
+              dd.addEventListener('hide.bs.dropdown', function(e) {
+                  if (this.classList.contains(CLASS_NAME)) {
+                      this.classList.remove(CLASS_NAME);
+                      e.preventDefault();
+                  }
+                  e.stopPropagation(); 
+              });
+          });
+      
+         
+         
+      })(bootstrap);
+      
+      </script>
+
+</body>
+</html>
